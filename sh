@@ -49,14 +49,18 @@ check_args () {
 usage () {
 
 cat << _EOF_
-  Usage: ${0} [OPTIONS]... [ARGS]...
+Usage: ${0} [OPTIONS]... [ARGS]...
 
     description
 
 
-  OPTIONS:
+OPTIONS:
 
-  EXAMPLES:
+    -h, *           display the help and exit
+
+EXAMPLES:
+
+NOTE:
 
 _EOF_
 

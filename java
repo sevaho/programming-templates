@@ -1,20 +1,54 @@
 // -----------------------------------------------------------------------------------------------------------------------------
+// GENERAL
+// -----------------------------------------------------------------------------------------------------------------------------
+//
+// author: Sebastiaan Van Hoecke
+// mail: sebastiaan@sevaho.io
+//
+// NOTE:
+//
+// -----------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+// -----------------------------------------------------------------------------------------------------------------------------
 // CLASSES
 // -----------------------------------------------------------------------------------------------------------------------------
 
-public class Class {
+class Test {
 
-    public static void main (String[] args) {
+    private String arg;
 
-        Class newClass = new Class();
+    public Test (String arg) {
+    
+        this.arg = arg;
 
-        System.out.printf("%s",newClass.returnHello("Hello world"));
 
     }
 
-    public String returnHello (String hello) {
+    public String method () {
+    
+        return this.arg;
+    
+    }
 
-        return hello;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------------
+// Main
+// -----------------------------------------------------------------------------------------------------------------------------
+
+public class Main {
+
+    public static void main (String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Arg1: ");
+        String arg1 = sc.next();
+
+        Test test = new Test(arg1);
+        System.out.printf("%s",test.method());
 
     }
 
