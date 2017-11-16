@@ -58,7 +58,19 @@ def check_args (argv):
 
 def usage ():
 
-    print("%s usage: " % sys.argv[0])
+    print("Usage: %s [OPTIONS]... [ARGS]... \
+            \n \
+            \n  description\
+            \n \
+            \nOPTIONS:\
+            \n \
+            \n  -h, *       display the help and exit\
+            \n \
+            \nEXAMPLES:\
+            \n \
+            \nNOTE:\
+            \n \
+            " % (sys.argv[0]))
 
     sys.exit(1)
 

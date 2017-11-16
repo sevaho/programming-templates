@@ -24,7 +24,7 @@ import (
 
 func main () {
 
-    arg1 := flag.String("arg1", "default value", "an argument")
+    arg1 := flag.String("arg1", "default value", "an argument") // auto usage
 
     flag.Parse()
 

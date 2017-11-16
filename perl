@@ -44,7 +44,13 @@ sub check_args {
 
 sub usage {
 
-    printf "Usage usage [-h <help>] [-a <argument>]\n";
+    printf "Usage: %s [OPTIONS]... [ARGS]... \
+            \n  description\
+            \nOPTIONS:\
+            \n  -h, *       display the help and exit\
+            \nEXAMPLES:\
+            \nNOTE:\
+            \n", "script.pl";
 
     exit 0;
 

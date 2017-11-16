@@ -13,9 +13,9 @@
 # VARIABLES
 # -----------------------------------------------------------------------------------------------------------------------------
 
-param (
+param ( # define arguments here, auto usage
 
-    [string]$arg1,
+    [string]$arg1, # example -arg1 "test"
     [string]$arg2 = "<++>",
     [Parameter(Mandatory=$true)][string]$arg2,
     [string]$arg4 = $(Read-Host "Input arg, please")
