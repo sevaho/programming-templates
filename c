@@ -10,6 +10,8 @@
 // -----------------------------------------------------------------------------------------------------------------------------
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <getopt.h>
 
 // -----------------------------------------------------------------------------------------------------------------------------
 // VARIABLES
@@ -18,21 +20,71 @@
 #define CONSTANT 100
 
 // -----------------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+// -----------------------------------------------------------------------------------------------------------------------------
+
+void usage () {
+
+    const char* usage =
+    "Usage: app [OPTIONS]... [ARGS]...\n"
+    "\n"
+    "   description\n"
+    "\n"
+    "OPTIONS:\n"
+    "\n"
+    "   -h, --help       display the help and exit\n"
+    "\n"
+    "EXAMPLES:\n"
+    "\n"
+    "NOTE:\n"
+    "\n";
+
+    fprintf(stdout, "%s", usage);
+
+}
+
+// -----------------------------------------------------------------------------------------------------------------------------
 // MAIN
 // -----------------------------------------------------------------------------------------------------------------------------
 
 int main (int argc, char *argv[]) {
 
-	if (argc < 2) {
+    static struct option long_options[] = {
 
-		printf("%s\n", "Pass 1 argument");
+        {"help", no_argument, NULL, 'h'},
 
-	} else {
+    };
 
-		printf("%s\n", argv[1]);
+    while (1) {
+    
+        int option_index = 0;
+        int option = getopt_long(argc, argv, "a:b:h", long_options, &option_index);
 
-	}
-	
-	return 0;
+        if (option == -1) {
+
+            break;
+
+        }
+
+        switch (option) {
+
+            case 'h':
+                usage();
+                exit(0);
+                break;
+
+            case 'a':
+                printf("%s\n", optarg);
+                break;
+
+            case 'b':
+                printf("%s\n", optarg);
+                break;
+
+        }
+
+    }
+    
+    return 0;
 
 }

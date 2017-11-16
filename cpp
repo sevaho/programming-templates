@@ -9,9 +9,10 @@
 //
 // -----------------------------------------------------------------------------------------------------------------------------
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <iostream>
+#include <getopt.h>
 
 using namespace std;
 
@@ -29,19 +30,23 @@ class Main {
 
     private:
 
+        string arg0;
         string arg1;
 
     public:
 
-        Main (string arg1) {
+        Main (string arg) {
         
-            this->arg1 = arg1;
+            this->arg0 = arg;
+
         
         }
 
-        void print () {
+        void print (string arg) {
 
-            cout << "argument1: " << arg1 << endl;
+            this->arg1 = arg;
+
+            cout << "argument1: " << this->arg1 << endl;
         
         } 
 
@@ -53,10 +58,23 @@ class Main {
 
 void usage () {
 
-    printf("%s\n", "Pass 1 argument");
-    exit(0);
+    const char* usage =
+    "Usage: app [OPTIONS]... [ARGS]...\n"
+    "\n"
+    "   description\n"
+    "\n"
+    "OPTIONS:\n"
+    "\n"
+    "   -h, --help       display the help and exit\n"
+    "\n"
+    "EXAMPLES:\n"
+    "\n"
+    "NOTE:\n"
+    "\n";
 
-};
+    fprintf(stdout, "%s", usage);
+
+}
 
 // -----------------------------------------------------------------------------------------------------------------------------
 // MAIN
@@ -64,17 +82,44 @@ void usage () {
 
 int main (int argc, char *argv[]) {
 
-	if (argc < 2) {
+    Main main("arg");
 
-        usage();
+    static struct option long_options[] = {
 
-	} else {
+        {"help", no_argument, NULL, 'h'},
 
-        Main main(argv[1]);
-        main.print();
+    };
 
-	}
-	
+    while (1) {
+    
+        int option_index = 0;
+        int option = getopt_long(argc, argv, "a:b:h", long_options, &option_index);
+
+        if (option == -1) {
+
+            break;
+
+        }
+
+        switch (option) {
+
+            case 'h':
+                usage();
+                exit(0);
+                break;
+
+            case 'a':
+                main.print(optarg);
+                break;
+
+            case 'b':
+                main.print(optarg);
+                break;
+
+        }
+
+    }
+
 	return 0;
 
 }
