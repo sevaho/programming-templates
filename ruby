@@ -18,6 +18,8 @@ require 'ostruct'
 # VARIABLES
 # -----------------------------------------------------------------------------------------------------------------------------
 
+@CONSTANT = 5
+
 # -----------------------------------------------------------------------------------------------------------------------------
 # CLASSES
 # -----------------------------------------------------------------------------------------------------------------------------
@@ -28,15 +30,7 @@ class Main
 
     def initialize
 
-        options = OpenStruct.new
-
-        OptionParser.new do |opt|
-
-            opt.on('-a', '--arg1 ARGUMENT1', 'The_first_argument') { |o| options[:arg1] = o }
-
-        end.parse!
-
-        @@arg1 = options.arg1
+        @@arg1 = "test" 
 
     end
 
@@ -52,9 +46,22 @@ end
 # FUNCTIONS
 # -----------------------------------------------------------------------------------------------------------------------------
 
-def usage
+def check_args
 
-    puts "usage"
+    options = OpenStruct.new
+
+    OptionParser.new do |opt| # automatic usage
+
+        opt.on('-a', '--arg1 ARGUMENT1', 'The_first_argument') { |o| options[:arg1] = o }
+
+    end.parse!
+
+    if options.arg1 != nil
+
+        @arg = options.arg1
+        puts "arg1: #@arg"
+
+    end
 
 end
 
@@ -62,6 +69,10 @@ end
 # MAIN
 # -----------------------------------------------------------------------------------------------------------------------------
 
-main = Main.new
-main.print
-# cursor: 25 del
+def main
+
+    check_args
+
+end
+
+main
