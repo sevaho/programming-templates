@@ -56,7 +56,7 @@ def check_args
 
     end.parse!
 
-    if options.arg1 != nil
+    if options.arg1
 
         @arg = options.arg1
         puts "arg1: #@arg"

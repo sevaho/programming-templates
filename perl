@@ -25,10 +25,26 @@ my $arg;
 # FUNCTIONS
 # -----------------------------------------------------------------------------------------------------------------------------
 
+sub check_args {
+
+    GetOptions(
+        
+        "help|h" => \&usage,
+        "a=s"    => \$arg
+
+    );
+
+    if ($arg) {
+    
+        printf "Argument: %s\n", $arg;
+
+    }
+
+}
+
 sub usage {
 
     printf "Usage usage [-h <help>] [-a <argument>]\n";
-    printf "-a <argument>: %s\n", $arg;
 
     exit 0;
 
@@ -40,17 +56,8 @@ sub usage {
 
 sub main {
 
-    GetOptions(
-        
-        "help|h" => \&usage,
-        "a=s"    => \$arg
-
-    );
-
-    printf "Argument: %s\n", $arg;
+    check_args()
 
 }
 
 main()
-
-# cursor: 5 del
