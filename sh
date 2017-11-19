@@ -72,6 +72,8 @@ _EOF_
 
 main () {
 
+    local var1=
+
     check_args "${@}"
 
 }
