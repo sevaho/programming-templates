@@ -15,7 +15,7 @@ import sys
 import getopt
 
 # -----------------------------------------------------------------------------------------------------------------------------
-# VARIABLES
+# GLOBAL VARIABLES
 # -----------------------------------------------------------------------------------------------------------------------------
 
 CONSTANT_A = 100
@@ -36,24 +36,6 @@ class Main(object):
 # -----------------------------------------------------------------------------------------------------------------------------
 # FUNCTIONS
 # -----------------------------------------------------------------------------------------------------------------------------
-
-
-def check_args (argv):
-
-    try:
-
-        opts, args = getopt.getopt(argv, "ha:", ["arg1="])
-
-    except getopt.GetoptError:
-
-        usage()
-
-    for opt, arg in opts:
-
-        if opt == '-h':
-            usage()
-        elif opt in ("-a", "--arg1"):
-            print(arg)
 
 
 def usage ():
@@ -81,7 +63,20 @@ def usage ():
 
 def main (argv):
 
-    check_args(argv)
+    try:
+
+        opts, args = getopt.getopt(argv, "ha:", ["arg1="])
+
+    except getopt.GetoptError:
+
+        usage()
+
+    for opt, arg in opts:
+
+        if opt == '-h':
+            usage()
+        elif opt in ("-a", "--arg1"):
+            print(arg)
 
 
 if __name__ == "__main__":
