@@ -1,3 +1,5 @@
+# vim: set ft=dockerfile:
+
 FROM alpine:latest
 
 MAINTAINER Sebastiaan Van Hoecke
