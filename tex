@@ -1,4 +1,5 @@
-%vim:set spell spelllang=en
+%vim set filetype=tex
+%vim set spell spelllang=en
 
 % -----------------------------------------------------------------------------------------------------------------------------
 % GENERAL
@@ -61,12 +62,15 @@
 }                   % show the filename of files included with \lstinputlisting; also try caption instead of ti
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\renewcommand{\chaptername}{Paper}
+\renewcommand{\thechapter}{\Alph{chapter}}
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
     \title{
-    \vspace{7cm}
+        \normalsize{Heading} \\
+        \vspace{7cm}
         \LARGE{Title} \\
 	 	\HRule{0.5pt} \\ [1.5cm]
 	 	\normalsize \vspace*{10\baselineskip}}
@@ -77,30 +81,29 @@
 
     \maketitle
 
-    \center
-
+    \begin{center}
         preface
-
+    \end{center}
         \vspace{3cm}
 
-        lorum.
+        blabla
 
     \newpage
 
     \tableofcontents
-
-    \chapter{chapter1}
+    \chapter{FirstOne}
     \section{test}
 
-    \begin{lstlisting}
-    import re
+    \begin{lstlisting}[language=bash]
+        a=5
+        test () {
 
-    def test ():
+            echo "tets $a"
 
-        print("test")
-    \end{lstlisting}
+        }:
+        \end{lstlisting}
 
-    \chapter{chapter2}
+    \chapter{SecondOne}
     text2
 
     \newpage
