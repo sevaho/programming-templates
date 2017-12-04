@@ -42,11 +42,22 @@ class Main {
         
         }
 
-        void print (string arg) {
+        int print (string arg) {
 
-            this->arg1 = arg;
+            try {
 
-            cout << "argument1: " << this->arg1 << endl;
+                this->arg1 = arg;
+
+                cout << "argument1: " << this->arg1 << endl;
+
+            } catch (exception const& e) {
+
+                cout << "There was an error: " << e.what() << endl;
+                return 1;
+
+            }
+
+            return 0;
         
         } 
 
