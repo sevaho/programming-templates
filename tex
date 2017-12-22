@@ -18,8 +18,9 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{graphicx}
 
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[a4paper,top=3cm,bottom=4cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 \usepackage{color}
 \usepackage{ifxetex}
@@ -27,85 +28,104 @@
 \usepackage{tgbonum}
 
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
+{\normalfont\bfseries}{}{0pt}{\Huge}
 
 
-\definecolor{grey}{rgb}{0.8,0.8,0.8}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{grey}{rgb}{0.97,0.98,0.98}
+\definecolor{comment}{rgb}{0.6,0.6,0.6}
+
+\definecolor{myblack}{RGB}{48,48,48}
+\definecolor{myred}{RGB}{203, 75, 22}
+\definecolor{mygreen}{RGB}{125, 165, 85}
+\definecolor{myyellow}{RGB}{205, 154, 52}
+\definecolor{myblue}{RGB}{85, 165, 205}
+\definecolor{mymagenta}{RGB}{164, 113, 164}
 
 \lstset{ %
-    backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-    basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-    breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-    breaklines=true,                 % sets automatic line breaking
-    captionpos=b,                    % sets the caption-position to bottom
-    commentstyle=\color{mygreen},    % comment style
-    deletekeywords={...},            % if you want to delete keywords from the given language
-    escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-    frame=single,	                   % adds a frame around the code
-    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-    keywordstyle=\color{blue},       % keyword style
-    language=Python,                 % the language of the code
-    morekeywords={*,...},            % if you want to add more keywords to the set
-    numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-    numbersep=10pt,                   % how far the line-numbers are from the code
-    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-    showstringspaces=false,          % underline spaces within strings only
-    showtabs=false,                  % show tabs within strings adding particular underscores
-    stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-    stringstyle=\color{mymauve},     % string literal style
-    tabsize=2,	                   % sets default tabsize to 2 spaces
-    title=\lstname 
+backgroundcolor=\color{grey},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+basicstyle=\small,numberstyle=\small,
+breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+captionpos=b,                    % sets the caption-position to bottom
+commentstyle=\color{comment},    % comment style
+deletekeywords={...},            % if you want to delete keywords from the given language
+escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{myred},       % keyword style
+morekeywords={*,...},            % if you want to add more keywords to the set
+numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+numbersep=10pt,                   % how far the line-numbers are from the code
+frame=lrtb,
+framextopmargin=5pt,
+framexbottommargin=5pt,
+rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showtabs=false,                  % show tabs within strings adding particular underscores
+stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mygreen},     % string literal style
+showstringspaces=false,          % underline spaces within strings only
+tabsize=2,	                   % sets default tabsize to 2 spaces
+aboveskip=0.7cm,
+belowskip=0.6cm,
+title=\lstname 
 }                   % show the filename of files included with \lstinputlisting; also try caption instead of ti
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
-\renewcommand{\chaptername}{Paper}
-\renewcommand{\thechapter}{\Alph{chapter}}
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-    \title{
-        \normalsize{Heading} \\
-        \vspace{7cm}
-        \LARGE{Title} \\
-	 	\HRule{0.5pt} \\ [1.5cm]
-	 	\normalsize \vspace*{10\baselineskip}}
+\title{
+\normalsize{Heading} \\
+\vspace{7cm}
+\large{Above title} \\
+\vspace{0.6cm}
+\huge{Title} \\
+\HRule{0.5pt} \\ [1.5cm]
+\normalsize \vspace*{10\baselineskip}}
 
-    \author{Sebastiaan Van Hoecke \\ 
-             sebastiaan@sevaho.io}
-    \date{1 January 2018}
+\author{Sebastiaan Van Hoecke \\ 
+        sebastiaan@sevaho.io}
+\date{1 January 2018}
 
-    \maketitle
+\maketitle
 
-    \begin{center}
-        preface
-    \end{center}
-        \vspace{3cm}
+\begin{center}
+preface
+\end{center}
+\vspace{3cm}
 
-        blabla
+blabla
 
-    \newpage
+\newpage
 
-    \tableofcontents
-    \chapter{FirstOne}
-    \section{test}
+\tableofcontents
+\chapter{FirstOne}
+\section{test}
 
-    \begin{lstlisting}[language=bash]
-        a=5
-        test () {
+test
+\begin{lstlisting}[language=bash]
+    # test
 
-            echo "tets $a"
+    a=5
 
-        }:
-        \end{lstlisting}
+    test () {
 
-    \chapter{SecondOne}
-    text2
+        echo "test $a"
 
-    \newpage
+    }:
+\end{lstlisting}
+test
+\\
+\\
+test
+text2
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{../Pictures/MFJKM.jpg}
+  \caption{A boat.}
+  \label{fig:boat1}
+\end{figure}
+\newpage
 
 \end{document}
