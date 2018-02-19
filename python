@@ -78,8 +78,9 @@ def main (argv):
         elif opt in ("-a", "--arg1"):
             print(arg)
 
+    # begin main code
+
     main = Main()
-    print(main)
 
 
 if __name__ == "__main__":

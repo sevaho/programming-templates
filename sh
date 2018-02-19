@@ -48,23 +48,24 @@ check_args () {
 
 usage () {
 
-cat << _EOF_
-Usage: ${0} [OPTIONS]... [ARGS]...
+    local usage="
+    Usage: ${0} [OPTIONS]... [ARGS]...
 
-    description
+        description
 
 
-OPTIONS:
+    OPTIONS:
 
-    -h, *           display the help and exit
+        -h, *           display the help and exit
 
-EXAMPLES:
+    EXAMPLES:
 
-NOTE:
+    NOTE:
+    "
 
-_EOF_
+    echo "$usage"
 
-exit 0
+    exit 0
 
 }
 
@@ -81,5 +82,3 @@ main () {
 }
 
 main "${@}"
-
-# cursor: 69 del   
