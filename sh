@@ -29,14 +29,15 @@ check_args () {
 
     fi
 
-    while getopts :ab:c: opt; do
+    [[ $1 == "" ]] && ARG1=""
+
+    while getopts :h: opt; do
 
         case $opt in
 
-            a)  echo "a preseed";;
-            b)  echo "$OPTARG";;
-            c)  ARG1="$OPTARG";;
-            ?)  usage;; 
+            h) usage;; 
+            ?) usage;; 
+            *) usage;;
 
         esac
 
